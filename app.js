@@ -254,7 +254,40 @@ function showError(msg) {
 }
 
 // ---------------------------------------------------------------------------
+// Privacy modal
+// ---------------------------------------------------------------------------
+
+function initModal() {
+  const backdrop = document.getElementById('privacy-modal');
+  const openBtn  = document.getElementById('privacy-open');
+  const closeBtn = document.getElementById('privacy-close');
+
+  openBtn.addEventListener('click', () => {
+    backdrop.hidden = false;
+    closeBtn.focus();
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  backdrop.addEventListener('click', e => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !backdrop.hidden) closeModal();
+  });
+
+  function closeModal() {
+    backdrop.hidden = true;
+    openBtn.focus();
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Start
 // ---------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+  initModal();
+});

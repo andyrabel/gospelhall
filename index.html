@@ -37,7 +37,46 @@
 
   <footer>
     <p>Data is fetched live from published Google Sheets. Contact individual assemblies for the most up-to-date information.</p>
+    <p class="footer-links">
+      <button class="footer-link" id="privacy-open">Privacy &amp; Data Notice</button>
+    </p>
   </footer>
+
+  <!-- Privacy notice modal -->
+  <div id="privacy-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacy-title" hidden>
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="privacy-title">Privacy &amp; Data Notice</h2>
+        <button class="modal-close" id="privacy-close" aria-label="Close privacy notice">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <h3>What this site does</h3>
+        <p>Gospel Hall Directory displays publicly listed contact information for Brethren assemblies in England, Northern Ireland, Scotland, Wales, and the Republic of Ireland. The data is fetched live each time you visit and is not stored by this website.</p>
+
+        <h3>What personal data is shown</h3>
+        <p>Assembly records may include a meeting name, address, postcode, telephone number, email address, and website. Some of these details may be personal data where they refer to an individual (for example, a personal mobile number or personal email address).</p>
+
+        <h3>Lawful basis</h3>
+        <p>Data is processed on the basis of <strong>legitimate interest</strong> — providing a publicly accessible directory of places of worship to help people find their local assembly. This site does not collect, sell, or share any visitor data, and does not use cookies or tracking technologies.</p>
+
+        <h3>Your rights (UK &amp; EU GDPR)</h3>
+        <p>If your personal contact details appear in this directory and you would like them corrected or removed, you have the right to request this. To exercise your right of <strong>erasure, rectification, or restriction</strong>, please contact us using the details below and we will arrange for the data to be updated in the source sheet.</p>
+        <p>You also have the right to lodge a complaint with the relevant supervisory authority:</p>
+        <ul>
+          <li><strong>UK</strong> — Information Commissioner's Office (ICO): <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a></li>
+          <li><strong>Republic of Ireland</strong> — Data Protection Commission (DPC): <a href="https://dataprotection.ie" target="_blank" rel="noopener noreferrer">dataprotection.ie</a></li>
+        </ul>
+
+        <h3>Contact</h3>
+        <p>To request removal or correction of your details, email: <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">CONTACT_EMAIL_PLACEHOLDER</a></p>
+        <p>We aim to respond within 14 days.</p>
+
+        <p class="notice-updated">Notice last reviewed: June 2026</p>
+
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

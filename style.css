@@ -301,6 +301,131 @@ footer {
   line-height: 1.5;
 }
 
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  font-family: var(--font);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.footer-link:hover {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ---- Privacy modal ---- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.modal-close:hover {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.modal-body {
+  padding: 1.25rem 1.4rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.modal-body h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.modal-body h3:first-child {
+  margin-top: 0;
+}
+
+.modal-body p {
+  margin-bottom: 0.6rem;
+}
+
+.modal-body ul {
+  margin: 0.4rem 0 0.6rem 1.25rem;
+}
+
+.modal-body li {
+  margin-bottom: 0.25rem;
+}
+
+.modal-body a {
+  color: var(--primary-light);
+}
+
+.modal-body a:hover {
+  color: var(--primary);
+}
+
+.notice-updated {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
 /* ---- Responsive ---- */
 
 @media (max-width: 520px) {
