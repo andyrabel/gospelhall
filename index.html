@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gospel Hall Directory</title>
+  <meta name="description" content="A directory of UK and Irish Brethren (Gospel Hall) assemblies.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1>Gospel Hall Directory</h1>
+      <p class="subtitle">UK &amp; Irish Brethren Assemblies</p>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Country"></nav>
+
+  <main>
+    <div class="search-wrap">
+      <label for="search" class="sr-only">Search assemblies</label>
+      <input
+        type="search"
+        id="search"
+        placeholder="Search by name, city, county or postcode…"
+        autocomplete="off"
+        spellcheck="false"
+      >
+    </div>
+
+    <p id="results-meta" class="results-meta" aria-live="polite" aria-atomic="true"></p>
+
+    <div id="cards" class="cards"></div>
+  </main>
+
+  <footer>
+    <p>Data is fetched live from published Google Sheets. Contact individual assemblies for the most up-to-date information.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
