@@ -36,7 +36,7 @@ If someone asks for their personal contact details (phone number, email address)
 2. Find their row and clear the Tel and/or Email cells
 3. The site will reflect the change on the next page load — no redeploy needed
 
-The privacy notice (accessible via the footer link on the site) asks people to email `CONTACT_EMAIL_PLACEHOLDER` for removal requests. Update that placeholder in `index.html` before publishing.
+The privacy notice (accessible via the footer link on the site) asks people to email `andyabel@gmail.com` for removal requests. Update that placeholder in `index.html` before publishing.
 
 ## Hosting
 
