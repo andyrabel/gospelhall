@@ -39,7 +39,6 @@ body {
   flex-direction: column;
 }
 
-/* Screen-reader only */
 .sr-only {
   position: absolute;
   width: 1px; height: 1px;
@@ -128,7 +127,7 @@ main {
 /* ---- Search ---- */
 
 .search-wrap {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.25rem;
 }
 
 #search {
@@ -153,6 +152,90 @@ main {
 
 #search::placeholder {
   color: var(--text-faint);
+}
+
+/* ---- Pages ---- */
+
+.page[hidden] {
+  display: none;
+}
+
+/* ---- Map container ---- */
+
+.map-container {
+  height: 460px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.25rem;
+  z-index: 0;
+}
+
+/* Leaflet needs explicit height on the element itself */
+.map-container .leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font);
+}
+
+/* ---- Map loading overlay ---- */
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 242, 236, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  gap: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.map-overlay p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 280px;
+}
+
+.map-overlay small {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+/* ---- Leaflet popup styles ---- */
+
+.popup-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.popup-address {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 0.4rem;
+}
+
+.popup-contact {
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+}
+
+.popup-contact a {
+  color: var(--primary-light);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.popup-contact a:hover {
+  text-decoration: underline;
 }
 
 /* ---- Results count ---- */
@@ -202,7 +285,6 @@ main {
   font-style: normal;
   color: var(--text-muted);
   line-height: 1.65;
-  margin-bottom: 0;
 }
 
 .card-contact {
@@ -241,6 +323,21 @@ main {
 .contact-row a:hover {
   color: var(--primary);
   text-decoration: underline;
+}
+
+/* ---- About page ---- */
+
+.about-content {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text);
 }
 
 /* ---- Loading spinner ---- */
@@ -320,6 +417,15 @@ footer {
   color: rgba(255,255,255,0.85);
 }
 
+.footer-sep {
+  color: rgba(255,255,255,0.25);
+  margin: 0 0.4rem;
+}
+
+a.footer-link {
+  text-decoration: underline;
+}
+
 /* ---- Privacy modal ---- */
 
 .modal-backdrop {
@@ -330,7 +436,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .modal-backdrop[hidden] {
@@ -441,7 +547,15 @@ footer {
     padding: 1.25rem 0.9rem 2rem;
   }
 
+  .map-container {
+    height: 300px;
+  }
+
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    padding: 1.25rem 1.1rem;
   }
 }

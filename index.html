@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gospel Hall Directory</title>
-  <meta name="description" content="A directory of UK and Irish Brethren (Gospel Hall) assemblies.">
+  <title>A Directory of Churches — Plymouth Brethren</title>
+  <meta name="description" content="A searchable map directory of UK and Irish churches with roots in the Plymouth Brethren movement.">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+  <!-- Leaflet MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="anonymous">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <div class="header-inner">
-      <h1>Gospel Hall Directory</h1>
-      <p class="subtitle">UK &amp; Irish Brethren Assemblies</p>
+      <h1>A Directory of Churches</h1>
+      <p class="subtitle">with their roots in the Plymouth Brethren movement</p>
     </div>
   </header>
 
-  <nav class="tabs" role="tablist" aria-label="Country"></nav>
+  <nav class="tabs" role="tablist" aria-label="Region"></nav>
 
   <main>
     <div class="search-wrap">
@@ -30,14 +37,33 @@
       >
     </div>
 
-    <p id="results-meta" class="results-meta" aria-live="polite" aria-atomic="true"></p>
+    <!-- United Kingdom page -->
+    <div id="page-uk" class="page">
+      <div id="map-uk" class="map-container"></div>
+      <p id="meta-uk" class="results-meta" aria-live="polite" aria-atomic="true"></p>
+      <div id="cards-uk" class="cards"></div>
+    </div>
 
-    <div id="cards" class="cards"></div>
+    <!-- Éire page -->
+    <div id="page-eire" class="page" hidden>
+      <div id="map-eire" class="map-container"></div>
+      <p id="meta-eire" class="results-meta" aria-live="polite" aria-atomic="true"></p>
+      <div id="cards-eire" class="cards"></div>
+    </div>
+
+    <!-- About page -->
+    <div id="page-about" class="page" hidden>
+      <div class="about-content">
+        <p>Gospel Halls (sometimes called Plymouth Brethren assemblies) are informal gatherings of Christians who meet simply, without a paid clergy or formal denomination, seeking to follow the New Testament pattern of worship and fellowship. Most assemblies hold an open Breaking of Bread service on Sunday mornings, where all believers are welcome to participate, and gospel meetings open to everyone. This directory lists assemblies across the UK and Ireland who warmly welcome visitors.</p>
+      </div>
+    </div>
   </main>
 
   <footer>
     <p>Data is fetched live from published Google Sheets. Contact individual assemblies for the most up-to-date information.</p>
     <p class="footer-links">
+      <a class="footer-link" href="mailto:CONTACT_EMAIL_PLACEHOLDER?subject=Gospel%20Hall%20Directory%20%E2%80%94%20Correction%20%2F%20Missing%20Assembly&body=Assembly%20name%3A%0ACountry%3A%0ACorrection%20or%20details%3A%0A">Suggest a correction or missing assembly</a>
+      <span class="footer-sep">·</span>
       <button class="footer-link" id="privacy-open">Privacy &amp; Data Notice</button>
     </p>
   </footer>
@@ -56,6 +82,9 @@
 
         <h3>What personal data is shown</h3>
         <p>Assembly records may include a meeting name, address, postcode, telephone number, email address, and website. Some of these details may be personal data where they refer to an individual (for example, a personal mobile number or personal email address).</p>
+
+        <h3>Mapping &amp; geocoding</h3>
+        <p>Assembly postcodes and locations are sent to <a href="https://postcodes.io" target="_blank" rel="noopener noreferrer">postcodes.io</a> (UK) and <a href="https://nominatim.openstreetmap.org" target="_blank" rel="noopener noreferrer">Nominatim / OpenStreetMap</a> (Ireland) to obtain map co-ordinates. Map tiles are served by OpenStreetMap. Results are cached in your browser's local storage to avoid repeat requests. No personal visitor data is transmitted.</p>
 
         <h3>Lawful basis</h3>
         <p>Data is processed on the basis of <strong>legitimate interest</strong> — providing a publicly accessible directory of places of worship to help people find their local assembly. This site does not collect, sell, or share any visitor data, and does not use cookies or tracking technologies.</p>
@@ -78,6 +107,9 @@
     </div>
   </div>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>
 </html>
