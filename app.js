@@ -249,6 +249,8 @@ function parseCSV(text, country) {
     tel:      findCol(headers, ['tel', 'telephone', 'phone']),
     email:    findCol(headers, ['email']),
     url:      findCol(headers, ['url', 'website', 'web']),
+    lat:      findCol(headers, ['lat', 'latitude']),
+    lng:      findCol(headers, ['long', 'lon', 'lng', 'longitude']),
   };
 
   const results = [];
@@ -256,6 +258,8 @@ function parseCSV(text, country) {
     const row = parseCSVLine(lines[i]);
     const name = getCol(row, ci.name);
     if (!name) continue;
+    const latRaw = getCol(row, ci.lat);
+    const lngRaw = getCol(row, ci.lng);
     results.push({
       id:       `${country}-${i}`,
       country,
@@ -267,8 +271,8 @@ function parseCSV(text, country) {
       tel:      getCol(row, ci.tel),
       email:    getCol(row, ci.email),
       url:      getCol(row, ci.url),
-      lat:      null,
-      lng:      null,
+      lat:      latRaw ? parseFloat(latRaw) : null,
+      lng:      lngRaw ? parseFloat(lngRaw) : null,
     });
   }
   return results;
@@ -357,10 +361,13 @@ async function geocodeUK(assemblies, mapId) {
 // ============================================================
 
 async function geocodeEire(assemblies, mapId) {
-  // Deduplicate by "city|county" so we make one request per unique location
-  const locationKeys = new Map(); // key -> {lat, lng} | null
+  // Assemblies that already have lat/lng from the sheet need no geocoding
+  const needsGeocode = assemblies.filter(a => a.lat === null);
+  if (needsGeocode.length === 0) return;
 
-  for (const a of assemblies) {
+  // Deduplicate by "city|county" so we make one request per unique location
+  const locationKeys = new Map();
+  for (const a of needsGeocode) {
     const key = buildEireKey(a);
     if (key && !locationKeys.has(key)) locationKeys.set(key, null);
   }
@@ -401,11 +408,11 @@ async function geocodeEire(assemblies, mapId) {
       console.warn('Nominatim failed for', key, e);
     }
 
-    if (i < toFetch.length - 1) await sleep(1100); // respect 1 req/s limit
+    if (i < toFetch.length - 1) await sleep(1100);
   }
 
-  // Apply geocodes to assemblies
-  for (const a of assemblies) {
+  // Apply geocodes to assemblies that still need them
+  for (const a of needsGeocode) {
     const key = buildEireKey(a);
     if (!key) continue;
     const geo = locationKeys.get(key);
