@@ -1,6 +1,6 @@
 # Gospel Hall Directory
 
-A searchable directory of UK and Irish Brethren (Gospel Hall) assemblies, published at **https://andyrabel.github.io/gospelhall**.
+A searchable directory of UK and Irish Brethren (Gospel Hall) assemblies, published at **https://christianassemblies.org**.
 
 ## What it does
 
