@@ -1,6 +1,6 @@
-# Gospel Hall Directory
+# Christian Assemblies Directory
 
-A searchable directory of UK and Irish Brethren (Gospel Hall) assemblies, published at **https://christianassemblies.org**.
+A searchable directory of UK and Irish churches and assemblies with roots in the Plymouth Brethren movement (Gospel Halls and others), published at **https://christianassemblies.org**.
 
 ## What it does
 
