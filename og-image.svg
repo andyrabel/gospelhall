@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f2ec"/>
+  <rect width="1200" height="630" fill="none" stroke="#ddd5c6" stroke-width="2"/>
+
+  <!-- Hall icon -->
+  <g transform="translate(120,175)">
+    <path d="M140 0 L280 110 H235 V280 H45 V110 H0 Z" fill="#2b4a7a"/>
+    <rect x="118" y="170" width="44" height="110" fill="#f5f2ec"/>
+    <rect x="70" y="130" width="34" height="34" fill="#f5f2ec"/>
+    <rect x="176" y="130" width="34" height="34" fill="#f5f2ec"/>
+  </g>
+
+  <!-- Text -->
+  <text x="480" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#1c1c2e" font-weight="bold">Gospel Hall Directory</text>
+  <text x="480" y="330" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="32" fill="#3d6399">Brethren Assemblies — UK &amp; Ireland</text>
+
+  <line x1="480" y1="365" x2="1080" y2="365" stroke="#a8c4e8" stroke-width="3"/>
+
+  <text x="480" y="415" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="26" fill="#62627a">England · Scotland · Wales · Northern Ireland · Éire</text>
+  <text x="480" y="455" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="26" fill="#62627a">Searchable map · addresses · meeting times</text>
+
+  <text x="480" y="520" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="24" fill="#2b4a7a">christianassemblies.org</text>
+</svg>

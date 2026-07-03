@@ -10,17 +10,25 @@
   <link rel="canonical" href="https://christianassemblies.org/">
   <meta name="theme-color" content="#2b4a7a">
 
+  <!-- Icons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://christianassemblies.org/">
   <meta property="og:site_name"   content="Christian Assemblies — Gospel Hall Directory">
   <meta property="og:title"       content="Gospel Hall Directory — Brethren Assemblies in the UK &amp; Ireland">
   <meta property="og:description" content="Find Gospel Hall and Brethren assemblies across England, Scotland, Wales, Northern Ireland and the Republic of Ireland.">
+  <meta property="og:image"       content="https://christianassemblies.org/og-image.svg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"      content="en_GB">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Gospel Hall Directory — Brethren Assemblies in the UK &amp; Ireland">
   <meta name="twitter:description" content="Find Gospel Hall and Brethren assemblies across England, Scotland, Wales, Northern Ireland and the Republic of Ireland.">
+  <meta name="twitter:image"       content="https://christianassemblies.org/og-image.svg">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -85,6 +93,30 @@
           "@type": "Answer",
           "text": "The Gospel Hall Directory at christianassemblies.org lists assemblies across England, Scotland, Wales, Northern Ireland and the Republic of Ireland, searchable by name, city, county or postcode, with addresses shown on an interactive map."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a Gospel Hall the same as the Plymouth Brethren Christian Church (PBCC)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The assemblies listed in this directory belong to the 'Open Brethren' tradition — independent, self-governing local churches that welcome visitors and outside fellowship. The Plymouth Brethren Christian Church (PBCC), sometimes called the 'Exclusive Brethren', is a separate, centrally organised group with different practices around separation from wider society. They share a historical root but are distinct movements today, and Gospel Halls in this directory are not part of the PBCC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a Gospel Hall and other Christian churches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gospel Halls are self-governing local assemblies rather than branches of a national denomination. They have no paid, ordained clergy — men within the assembly share responsibility for ministry and oversight — and worship is centred on a weekly Breaking of Bread service alongside Bible teaching and gospel outreach meetings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What times are gospel meetings and Breaking of Bread services held?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Meeting times vary by assembly and are not centrally standardised. The Breaking of Bread service is typically held on Sunday morning, often followed or preceded by other meetings later in the day. Contact the individual assembly directly using the phone number, email or website listed in the directory to confirm current times."
+        }
       }
     ]
   }
@@ -129,6 +161,7 @@
 
     <!-- United Kingdom page -->
     <div id="page-uk" class="page">
+      <h2 class="sr-only">Gospel Hall and Brethren assemblies in the United Kingdom</h2>
       <div id="map-uk" class="map-container"></div>
       <p id="meta-uk" class="results-meta" aria-live="polite" aria-atomic="true"></p>
       <div id="cards-uk" class="cards"></div>
@@ -136,6 +169,7 @@
 
     <!-- Éire page -->
     <div id="page-eire" class="page" hidden>
+      <h2 class="sr-only">Gospel Hall and Brethren assemblies in the Republic of Ireland</h2>
       <div id="map-eire" class="map-container"></div>
       <p id="meta-eire" class="results-meta" aria-live="polite" aria-atomic="true"></p>
       <div id="cards-eire" class="cards"></div>
@@ -144,7 +178,9 @@
     <!-- About page -->
     <div id="page-about" class="page" hidden>
       <div class="about-content">
+        <h2>About this directory</h2>
         <p>This directory lists independent churches and assemblies with their roots in the Plymouth Brethren movement. They go by many names — Gospel Hall, Bible Chapel, Christian Assembly, Community Church, and others — but share a common heritage: informal gatherings of Christians who meet simply, without a paid clergy or formal denomination, seeking to follow the New Testament pattern of worship and fellowship. Most hold a Breaking of Bread service on Sunday mornings, open to all who know the Lord Jesus as Saviour, and gospel meetings welcoming everyone. Some appreciate visitors bringing a letter of commendation from their home assembly, though all are warmly received.</p>
+        <p>These assemblies are part of the "Open Brethren" tradition and are distinct from the Plymouth Brethren Christian Church (PBCC / "Exclusive Brethren"), which is a separate, centrally organised movement.</p>
       </div>
     </div>
   </main>

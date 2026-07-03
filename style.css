@@ -340,6 +340,16 @@ main {
   color: var(--text);
 }
 
+.about-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.about-content p + p {
+  margin-top: 1rem;
+}
+
 /* ---- Loading spinner ---- */
 
 .spinner-wrap {
