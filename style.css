@@ -569,3 +569,27 @@ a.footer-link {
     padding: 1.25rem 1.1rem;
   }
 }
+
+/* ---- About page FAQ ---- */
+
+.about-content .faq {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-content .faq h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-content .faq h4 {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.about-content .faq p + h4 {
+  margin-top: 1.25rem;
+}

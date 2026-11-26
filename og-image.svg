@@ -11,13 +11,13 @@
   </g>
 
   <!-- Text -->
-  <text x="480" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#1c1c2e" font-weight="bold">Gospel Hall Directory</text>
+  <text x="480" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#1c1c2e" font-weight="bold">Gospel Hall Directory</text>
   <text x="480" y="330" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="32" fill="#3d6399">Brethren Assemblies — UK &amp; Ireland</text>
 
   <line x1="480" y1="365" x2="1080" y2="365" stroke="#a8c4e8" stroke-width="3"/>
 
   <text x="480" y="415" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="26" fill="#62627a">England · Scotland · Wales · Northern Ireland · Éire</text>
-  <text x="480" y="455" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="26" fill="#62627a">Searchable map · addresses · meeting times</text>
+  <text x="480" y="455" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="26" fill="#62627a">Searchable map · addresses · contact details</text>
 
   <text x="480" y="520" font-family="system-ui, Helvetica, Arial, sans-serif" font-size="24" fill="#2b4a7a">christianassemblies.org</text>
 </svg>

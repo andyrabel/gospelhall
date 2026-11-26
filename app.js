@@ -89,7 +89,21 @@ const searchEl = document.getElementById('search');
 function init() {
   buildTabs();
   searchEl.addEventListener('input', onSearch);
-  activateTab('United Kingdom');
+
+  // Deep links: ?q=<search>&tab=eire|uk|about  (matches the SearchAction in index.html)
+  const params = new URLSearchParams(location.search);
+  const tabParam = (params.get('tab') || '').toLowerCase();
+  if (tabParam === 'about') {
+    activateAbout();
+    return;
+  }
+  activateTab(tabParam === 'eire' || tabParam === 'éire' ? 'Éire' : 'United Kingdom');
+
+  const q = (params.get('q') || '').trim();
+  if (q) {
+    searchEl.value = q;
+    searchQuery = q.toLowerCase();
+  }
 }
 
 // ============================================================
@@ -121,6 +135,13 @@ function activateTab(name) {
   activeTab = name;
   searchQuery = '';
   searchEl.value = '';
+  try {
+    const url = new URL(location.href);
+    if (url.searchParams.has('q')) {
+      url.searchParams.delete('q');
+      history.replaceState(null, '', url);
+    }
+  } catch {}
   searchEl.closest('.search-wrap').hidden = false;
 
   // Show/hide pages
@@ -168,6 +189,15 @@ function syncTabButtons(activeName) {
 
 function onSearch(e) {
   searchQuery = e.target.value.toLowerCase().trim();
+
+  // Keep the URL shareable (?q=...) without adding history entries
+  try {
+    const url = new URL(location.href);
+    const raw = e.target.value.trim();
+    if (raw) url.searchParams.set('q', raw); else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  } catch {}
+
   if (tabState[activeTab]?.loaded) {
     applyFilter(activeTab);
   }
